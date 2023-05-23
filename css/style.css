@@ -109,6 +109,16 @@ li a:hover {
   grid-column: 2;
 }
 
+.animais-lista li {
+  cursor: pointer;
+}
+
+.animais-lista li:hover {
+  opacity: .9;
+  border: 3px solid #fb5;
+  border-radius: 4px;
+}
+
 .animais-lista::-webkit-scrollbar {
   width: 18px;
 }
@@ -225,5 +235,28 @@ li a:hover {
 
   .copy {
     margin-bottom: 0;
+  }
+}
+
+/* JavaScript */
+
+.js-content section.ativo {
+  display: block !important;
+  animation: show .5s forwards;
+}
+
+.js .js-content section {
+  display: none;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+
+  to {
+    opacity: 100;
+    transform: translate3d(0, 0, 0);
   }
 }
