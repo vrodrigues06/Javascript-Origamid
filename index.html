@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  <nav class="menu js-menu">
+  <nav class="menu" data-menu="suave">
     <ul>
       <li><a href="#animais">animais</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -24,9 +24,9 @@
       <li><a href="https://github.com/vrodrigues06">Dev →</a></li>
     </ul>
   </nav>
-  <section class="grid-section animais js-scroll" id="animais">
+  <section class="grid-section animais" data-anime="scroll" id="animais">
     <h1 class="titulo">Animais Fantásticos</h1>
-    <ul class="animais-lista js-tabmenu">
+    <ul class="animais-lista" data-tab="menu">
       <li>
         <img src="img/imagem1.jpg" alt="">
       </li>
@@ -46,15 +46,15 @@
         <img src="img/imagem6.jpg" alt="">
       </li>
     </ul>
-    <div class="animais-descricao js-content ">
-      <section id="animais">
+    <div class="animais-descricao" data-tab="content">
+      <section id="animais" data-anime="show-down">
         <h2>Raposa</h2>
         <p>A raposa é um mamífero que pertence à família dos canídeos. Com seu corpo esbelto e cauda felpuda, ela é conhecida por sua agilidade e astúcia.</p>
         <p>A raposa possui uma pelagem densa e variada, que pode ser avermelhada, acinzentada ou marrom, dependendo da espécie. Essa pelagem a ajuda a se camuflar em diferentes ambientes e se adaptar a diferentes climas.</p>
         <p>Esse animal é conhecido por sua habilidade de caça. Com sua audição aguçada e movimentos rápidos, ela é capaz de capturar pequenos mamíferos, aves e até mesmo insetos.</p>
         <p>Além de sua importância ecológica, a raposa também possui um lugar na cultura popular, sendo retratada em histórias e fábulas como uma criatura esperta e inteligente.</p>
       </section>
-      <section>
+      <section data-anime="show-down">
         <h2>Esquilo</h2>
         <p>O esquilo é um pequeno roedor encontrado em diversas regiões do mundo. Com sua agilidade e habilidade em escalar árvores, ele é conhecido por suas acrobacias e pela habilidade de armazenar comida para o inverno. Sua cauda fofa e espessa é uma característica marcante, servindo como equilíbrio durante seus saltos de galho em galho.</p>
         <p>Os esquilos são animais incrivelmente ágeis, capazes de se movimentar com destreza e rapidez entre as árvores. Com suas garras afiadas e membros fortes, eles são especialistas em escalar e se equilibrar em galhos finos. Sua habilidade em saltar de uma árvore para outra é impressionante e lhes permite explorar vastas áreas em busca de alimentos e abrigo.</p>
@@ -62,7 +62,7 @@
         <p>A pelagem do esquilo varia de acordo com a espécie, mas geralmente é densa e macia. Ela atua como isolante térmico, mantendo os esquilos aquecidos durante o inverno rigoroso. Além disso, sua cauda serve como um indicador visual para outros esquilos, comunicando informações sobre seu estado emocional ou advertindo sobre perigos iminentes.</p>
       </section>
 
-      <section>
+      <section data-anime="show-down">
         <h2>Urso</h2>
         <p>O urso é um mamífero impressionante que pode ser encontrado em uma variedade de habitats, desde as florestas densas até as vastas tundras geladas. Com seu porte imponente, o urso é frequentemente reconhecido como um dos predadores mais formidáveis da natureza.</p>
         <p>Embora muitas pessoas associem os ursos à alimentação carnívora, é importante destacar que várias espécies são principalmente herbívoras. Esses ursos herbívoros se alimentam principalmente de plantas, frutas e até mesmo insetos. Sua dieta pode variar dependendo da disponibilidade de alimentos em seu ambiente.</p>
@@ -70,7 +70,7 @@
         <p>Os ursos têm uma reputação de força e poder, mas também são conhecidos por seu comportamento pacífico e maternal. As fêmeas demonstram um cuidado e uma dedicação excepcionais com seus filhotes, ensinando-os habilidades essenciais para a sobrevivência. Embora seja importante respeitar a natureza selvagem desses animais e manter a distância segura, os ursos são criaturas fascinantes e desempenham um papel vital nos ecossistemas em que habitam.</p>
       </section>
 
-      <section>
+      <section data-anime="show-right">
         <h2>Lobo</h2>
         <p>O lobo é um animal fascinante e emblemático que desperta tanto admiração quanto temor.</p>
         <p>Com sua aparência majestosa e sua estrutura social complexa, os lobos são considerados predadores de topo e desempenham um papel vital nos ecossistemas em que habitam.</p>
@@ -78,7 +78,7 @@
         <p>Além disso, os lobos são conhecidos por sua habilidade de comunicação vocal, emitindo uivos que podem ser ouvidos a grandes distâncias, servindo para marcar território, coordenar ações em grupo e fortalecer os laços sociais dentro da matilha.</p>
       </section>
 
-      <section>
+      <section data-anime="show-right">
         <h2>Chimpanzé</h2>
         <p>O chimpanzé é nosso parente mais próximo no reino animal, compartilhando mais de 98% de seu DNA com os seres humanos.</p>
         <p>Com sua inteligência excepcional, os chimpanzés demonstram habilidades impressionantes, como o uso de ferramentas e a resolução de problemas complexos.</p>
@@ -86,7 +86,7 @@
         <p>Além disso, os chimpanzés têm uma ampla gama de comportamentos, como a fabricação e o uso de ferramentas, a caça cooperativa e até mesmo a expressão de emoções, como alegria, tristeza e raiva.</p>
       </section>
 
-      <section>
+      <section data-anime="show-right">
         <h2>Leão</h2>
         <p>O leão é um majestoso felino conhecido como o "rei da selva" devido à sua aparência imponente e sua posição no topo da cadeia alimentar.</p>
         <p>Com sua juba distintiva, o leão macho é um símbolo de força e liderança dentro de sua alcateia, um grupo social composto por várias fêmeas e seus filhotes.</p>
@@ -95,9 +95,9 @@
       </section>
     </div>
   </section>
-  <section class="grid-section faq js-scroll" id="faq">
+  <section class="grid-section faq" data-anime="scroll" id="faq">
     <h1 class="titulo">FAQ</h1>
-    <dl class="faq-lista js-accordion">
+    <dl class="faq-lista js-accordion" data-anime="accordion">
       <dt>Qual a idade dos animais?</dt>
       <dd>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</dd>
       <dt>Eles são fantásticos?</dt>
@@ -109,7 +109,7 @@
     </dl>
   </section>
 
-  <section class="grid-section contato js-scroll" id="contato">
+  <section class="grid-section contato" data-anime="scroll" id="contato">
     <h1 class="titulo">Contato</h1>
     <div class="mapa">
       <img src="img/mapa.png" alt="">
@@ -126,7 +126,7 @@
     <p>todos os direitos reservados.</p>
   </footer>
 
-
+  <script src="animacoes.js"></script>
   <script src="script.js"></script>
 </body>
 

@@ -1,15 +1,22 @@
 /* JavaScript */
 
-.js-content section.ativo {
+[data-tab="content"] section.ativo {
   display: block !important;
-  animation: show .8s forwards;
 }
 
-.js .js-content section {
+[data-tab="content"] section.ativo.show-right {
+  animation: show-right .8s forwards;
+}
+
+[data-tab="content"] section.ativo.show-down {
+  animation: show-down .8s forwards;
+}
+
+.js [data-tab="content"] section {
   display: none;
 }
 
-@keyframes show {
+@keyframes show-right {
   from {
     opacity: 0;
     transform: translate3d(-30px, 0, 0);
@@ -21,31 +28,43 @@
   }
 }
 
-.js .js-accordion dd {
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+
+  to {
+    opacity: 100;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.js [data-anime="accordion"] dd {
   display: none;
 }
 
-.js-accordion dt::after {
+[data-anime="accordion"] dt::after {
   content: "⬎";
   margin-left: 10px;
 
 }
 
-.js-accordion dt.ativo::after {
+[data-anime="accordion"] dt.ativo::after {
   content: "⬏";
   margin-left: 10px;
 }
 
-.js-accordion dd.ativo {
+[data-anime="accordion"] dd.ativo {
   display: block;
   animation: slideDown 1s forwards;
 }
 
-.js .js-scroll {
+.js [data-anime='scroll'] {
   opacity: 0;
 }
 
-.js .js-scroll.ativo {
+.js [data-anime='scroll'].ativo {
   opacity: 1;
   animation: ScrollAnimation 1s forwards;
 }
