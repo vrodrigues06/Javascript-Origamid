@@ -1,0 +1,78 @@
+[data-menu='button'] {
+  display: none;
+}
+
+@media(max-width: 700px) {
+  .js [data-menu='button'] {
+    background: #222;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 9px;
+    text-transform: uppercase;
+    font-family: 'IBM plex mono', monospace;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: .5rem 1rem;
+    position: relative;
+    z-index: 300;
+  }
+
+
+  .js [data-menu='button']::before {
+    content: "";
+    background: #fff;
+    border-radius: 9px;
+    width: 12px;
+    height: 2px;
+    margin-right: 4px;
+    display: inline-block;
+    box-shadow: 0 4px #fff, 0 -4px #fff;
+    transition: transform .3s;
+  }
+
+  .js [data-menu="button"].active::before {
+    transform: rotate(-90deg);
+  }
+
+  #menu {
+    display: none;
+    position: absolute;
+    background-color: #fb5;
+    width: 160px;
+    z-index: 200;
+    top: 0;
+    padding: 60px 0 20px 0;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .2);
+  }
+
+
+  @keyframes a {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  #menu.active {
+    display: block;
+    animation: show-down .5s forwards
+  }
+
+
+
+  #menu li {
+    margin: 0;
+  }
+
+  .js .dropdown-menu {
+    position: static;
+    border: none;
+    animation: show-down .3s forwards !important;
+  }
+}

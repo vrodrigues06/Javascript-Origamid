@@ -1,0 +1,35 @@
+.numeros-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 100px;
+  grid-column: 2/4;
+}
+
+
+.numero-animal h3 {
+  font-size: 2rem;
+  font-family: 'Playfair Display SC';
+  margin-bottom: .5rem;
+}
+
+.numero-animal span {
+  color: #e54;
+  font-family: 'IBM plex Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .numeros-grid {
+    grid-column: 1;
+    gap: 40px
+  }
+
+  .numero-animal h3 {
+    font-size: 1.6rem;
+  }
+
+  .numero-animal span {
+    font-size: 1.3rem;
+  }
+}

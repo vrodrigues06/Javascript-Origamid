@@ -10,7 +10,8 @@ export default function initAnimateScroll() {
         const topSection = section.getBoundingClientRect().top;
         const isSectionVisible = topSection - windowMetade < 0;
         if (isSectionVisible) section.classList.add("ativo");
-        else section.classList.remove("ativo");
+        else if (section.classList.contains("ativo"))
+          section.classList.remove("ativo");
       });
     }
 

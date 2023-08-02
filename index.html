@@ -18,7 +18,9 @@
 <body>
   <div class="grid-container">
     <nav class="menu" data-menu="suave">
-      <ul>
+      <button data-menu='button' aria-expanded="false" aria-controls="menu"> Menu
+      </button>
+      <ul data-menu="list" id="menu">
         <li><a href="#animais">animais</a></li>
         <li data-dropdown>
           <a href="sobre.html">Sobre</a>
@@ -106,6 +108,38 @@
         </section>
       </div>
     </section>
+
+    <section class="grid-section numeros" data-anime="scroll">
+      <h1 class="titulo">Números</h1>
+      <div class="numeros-grid">
+        <div class="numero-animal">
+          <h3>Raposa</h3>
+          <span data-numero>11498</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Esquilo</h3>
+          <span data-numero>25774</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Urso</h3>
+          <span data-numero>2932</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Lobo</h3>
+          <span data-numero>6913</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Chimpanzé</h3>
+          <span data-numero>1898</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Leão</h3>
+          <span data-numero>1117</span>
+        </div>
+
+      </div>
+    </section>
+
     <section class="grid-section faq" data-anime="scroll" id="faq">
       <h1 class="titulo">FAQ</h1>
       <dl class="faq-lista js-accordion" data-anime="accordion">
