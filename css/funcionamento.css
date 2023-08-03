@@ -1,0 +1,21 @@
+[data-semana].aberto::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background-color: #3F4;
+  display: inline-block;
+  border: 2px solid #000
+}
+
+[data-semana].fechado::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background-color: red;
+  display: inline-block;
+  border: 2px solid #000
+}
