@@ -1,15 +1,19 @@
 import initAnimaNumeros from "./anima-numeros.js";
 export default function initAnimaisFetch() {
   async function puxarTotal() {
-    const dadosFetch = await fetch("../../animaisapi.json");
-    const jsonArray = await dadosFetch.json();
-    const numerosGrid = document.querySelector(".numeros-grid");
+    try {
+      const dadosFetch = await fetch("../../animaisapi.json");
+      const jsonArray = await dadosFetch.json();
+      const numerosGrid = document.querySelector(".numeros-grid");
 
-    jsonArray.forEach((animal) => {
-      const divAnimal = createAnimal(animal);
-      numerosGrid.appendChild(divAnimal);
-    });
-    initAnimaNumeros();
+      jsonArray.forEach((animal) => {
+        const divAnimal = createAnimal(animal);
+        numerosGrid.appendChild(divAnimal);
+      });
+      initAnimaNumeros();
+    } catch (erro) {
+      console.log(erro);
+    }
   }
 
   function createAnimal(animal) {
