@@ -112,31 +112,6 @@
     <section class="grid-section numeros" data-anime="scroll">
       <h1 class="titulo">Números</h1>
       <div class="numeros-grid">
-        <div class="numero-animal">
-          <h3>Raposa</h3>
-          <span data-numero>11498</span>
-        </div>
-        <div class="numero-animal">
-          <h3>Esquilo</h3>
-          <span data-numero>25774</span>
-        </div>
-        <div class="numero-animal">
-          <h3>Urso</h3>
-          <span data-numero>2932</span>
-        </div>
-        <div class="numero-animal">
-          <h3>Lobo</h3>
-          <span data-numero>6913</span>
-        </div>
-        <div class="numero-animal">
-          <h3>Chimpanzé</h3>
-          <span data-numero>1898</span>
-        </div>
-        <div class="numero-animal">
-          <h3>Leão</h3>
-          <span data-numero>1117</span>
-        </div>
-
       </div>
     </section>
 
@@ -175,11 +150,12 @@
   <section class="modal-container" data-modal="container">
     <div class="modal">
       <button data-modal="close" class="close"> X </button>
-      <form action="">
+      <form name="contatos" action="">
         <label for="email">Email</label>
-        <input type="text" for="email" id="email" placeholder="type here your e-mail" autocomplete="username">
+        <input type="email" for="email" id="email" placeholder="type here your e-mail" autocomplete="username" required>
+        <span class="erro"></span>
         <label for="password">Password</label>
-        <input type="password" for="password" id="password" autocomplete="current-password">
+        <input type="password" for="password" id="password" autocomplete="current-password" required>
         <button type="submit">Enter</button>
       </form>
     </div>
