@@ -12,7 +12,6 @@ export default function initAnimateScroll() {
   }
   if (sections.length) {
     animateScroll();
-
     window.addEventListener("scroll", animateScroll);
   }
 }
