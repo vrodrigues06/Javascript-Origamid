@@ -5,9 +5,7 @@ export default function initFuncionamento() {
     const diasSemana = funcionamento.dataset.semana.split(",").map(Number);
     const horarioSemana = funcionamento.dataset.horario
       .split(",")
-      .map((item) => {
-        return +item;
-      });
+      .map((item) => item);
     const dataAgora = new Date();
     const diaAgora = dataAgora.getDay();
     const horaAgora = dataAgora.getHours();

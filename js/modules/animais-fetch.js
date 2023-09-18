@@ -1,6 +1,13 @@
 import initAnimaNumeros from "./anima-numeros.js";
+
 export default function initAnimaisFetch() {
   async function puxarTotal() {
+    function createAnimal(animal) {
+      const div = document.createElement("div");
+      div.classList.add("numero-animal");
+      div.innerHTML = `<h3> ${animal.specie} </h3> <span data-numero> ${animal.total} </span>`;
+      return div;
+    }
     try {
       const dadosFetch = await fetch("../../animaisapi.json");
       const jsonArray = await dadosFetch.json();
@@ -14,13 +21,6 @@ export default function initAnimaisFetch() {
     } catch (erro) {
       console.log(erro);
     }
-  }
-
-  function createAnimal(animal) {
-    const div = document.createElement("div");
-    div.classList.add("numero-animal");
-    div.innerHTML = `<h3> ${animal.specie} </h3> <span data-numero> ${animal.total} </span>`;
-    return div;
   }
 
   puxarTotal();
