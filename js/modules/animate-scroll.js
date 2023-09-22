@@ -1,17 +1,24 @@
-export default function initAnimateScroll() {
-  const sections = document.querySelectorAll("[data-anime='scroll']");
-  const windowMetade = window.innerHeight * 0.6;
-  function animateScroll() {
-    sections.forEach((section) => {
+export default class AnimateScroll {
+  constructor(sections) {
+    this.sections = document.querySelectorAll(sections);
+    this.windowMetade = window.innerHeight * 0.6;
+
+    this.animateScroll = this.animateScroll.bind(this);
+  }
+
+  animateScroll() {
+    this.sections.forEach((section) => {
       const topSection = section.getBoundingClientRect().top;
-      const isSectionVisible = topSection - windowMetade < 0;
+      const isSectionVisible = topSection - this.windowMetade < 0;
       if (isSectionVisible) section.classList.add("ativo");
       else if (section.classList.contains("ativo"))
         section.classList.remove("ativo");
     });
   }
-  if (sections.length) {
-    animateScroll();
-    window.addEventListener("scroll", animateScroll);
+
+  init() {
+    this.animateScroll();
+    window.addEventListener("scroll", this.animateScroll);
+    return this;
   }
 }
