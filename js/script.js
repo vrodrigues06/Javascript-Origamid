@@ -8,7 +8,7 @@ import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import animaisFetch from "./modules/animais-fetch.js";
 import fetchBtc from "./modules/fetch-btc.js";
-import initAnimateScroll from "./modules/animate-scroll.js";
+import AnimateScroll from "./modules/animate-scroll.js";
 
 const smoothScroll = new SmoothScroll('[data-menu="suave"] a[href^="#"]');
 smoothScroll.init();
@@ -32,7 +32,9 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
-initAnimateScroll();
+const animateScroll = new AnimateScroll("[data-anime='scroll']");
+animateScroll.init();
+
 initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
