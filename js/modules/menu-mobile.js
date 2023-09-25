@@ -27,6 +27,7 @@ export default class MenuMobile {
     });
   }
 
+  // adiciona eventos em forma de array nos button de Menu
   addEventMenu() {
     this.eventos.forEach((evento) =>
       this.menuButton.addEventListener(evento, this.openMenu)
