@@ -1,25 +1,45 @@
-export default function initFuncionamento() {
-  const funcionamento = document.querySelector("[data-semana]");
+export default class Funcionamento {
+  constructor(funcionamento) {
+    this.funcionamento = document.querySelector(funcionamento);
+  }
 
-  if (funcionamento) {
-    const diasSemana = funcionamento.dataset.semana.split(",").map(Number);
-    const horarioSemana = funcionamento.dataset.horario
+  dadosFuncionamento() {
+    this.diasSemana = this.funcionamento.dataset.semana.split(",").map(Number);
+    this.horarioSemana = this.funcionamento.dataset.horario
       .split(",")
       .map((item) => item);
-    const dataAgora = new Date();
-    const diaAgora = dataAgora.getDay();
-    const horaAgora = dataAgora.getHours();
+  }
 
-    const semanaAberto = diasSemana.includes(diaAgora);
+  dadosAgora() {
+    this.dataAgora = new Date();
+    this.diaAgora = this.dataAgora.getDay();
+    this.horaAgora = this.dataAgora.getUTCHours() - 3;
+  }
+
+  isOpen() {
+    const semanaAberto = this.diasSemana.indexOf(this.diaAgora) !== -1;
     const horarioAberto =
-      horaAgora >= horarioSemana[0] && horaAgora < horarioSemana[1];
+      this.horaAgora >= this.horarioSemana[0] &&
+      this.horaAgora < this.horarioSemana[1];
+    return semanaAberto && horarioAberto;
+  }
 
-    if (semanaAberto && horarioAberto) {
-      funcionamento.classList.add("aberto");
-      funcionamento.setAttribute("title", "aberto agora");
+  ativaAberto() {
+    if (this.isOpen()) {
+      this.funcionamento.classList.add("aberto");
+      this.funcionamento.setAttribute("title", "aberto agora");
     } else {
-      funcionamento.classList.add("fechado");
-      funcionamento.setAttribute("title", "fechado agora");
+      this.funcionamento.classList.add("fechado");
+      this.funcionamento.setAttribute("title", "fechado agora");
     }
+  }
+
+  init() {
+    if (this.funcionamento) {
+      this.dadosFuncionamento();
+      this.dadosAgora();
+      this.ativaAberto();
+    }
+    return this;
   }
 }
