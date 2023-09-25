@@ -1,23 +1,40 @@
 import outsideClick from "./outside-click.js";
 
-export default function initMenuMobile() {
-  const menuButton = document.querySelector('[data-menu="button"]');
-  const menuLista = document.querySelector('[data-menu="list"]');
-  const eventos = ["click", "touchstart"];
-  function openMenu() {
-    const menus = [menuButton, menuLista];
-    menus.forEach((item) => {
-      item.classList.toggle("active");
-      outsideClick(menuLista, eventos, () => {
-        menus.forEach(() => {
-          item.classList.remove("active");
-        });
+export default class MenuMobile {
+  constructor(menuButton, menuLista, eventos) {
+    this.menuButton = document.querySelector(menuButton);
+    this.menuLista = document.querySelector(menuLista);
+
+    // define touchstart e click como argumento padrão de events
+    // caso não seja definido.
+    if (eventos === undefined) this.eventos = ["touchstart", "click"];
+    else this.eventos = eventos;
+
+    // define this no openMenu na função de callback ao adicionar evento
+    this.openMenu = this.openMenu.bind(this);
+  }
+
+  // abre e fecha os menus de acordo com a ativação dos eventos determinados
+  openMenu() {
+    const menus = [this.menuLista, this.menuButton];
+    menus.forEach((menu) => {
+      menu.classList.add("active");
+    });
+    outsideClick(this.menuLista, this.eventos, () => {
+      menus.forEach((menu) => {
+        menu.classList.remove("active");
       });
     });
   }
-  if (menuButton) {
-    eventos.forEach((evento) => {
-      menuButton.addEventListener(evento, openMenu, { passive: true });
-    });
+
+  addEventMenu() {
+    this.eventos.forEach((evento) =>
+      this.menuButton.addEventListener(evento, this.openMenu)
+    );
+  }
+
+  init() {
+    if (this.menuButton && this.menuLista) this.addEventMenu();
+    return this;
   }
 }
