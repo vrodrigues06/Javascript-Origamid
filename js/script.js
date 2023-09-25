@@ -43,7 +43,7 @@ menuMobile.init();
 
 // APis externas Json
 fetchBtc("https://blockchain.info/ticker", "[data-btc]");
-animaisFetch("../../animaisapi.json", ".numeros-grid");
+animaisFetch("./animaisapi.json", ".numeros-grid");
 
 const funcionamento = new Funcionamento("[data-semana]");
 funcionamento.init();
