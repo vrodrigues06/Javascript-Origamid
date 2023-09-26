@@ -43,10 +43,7 @@ menuMobile.init();
 
 // APis externas Json
 fetchBtc("https://blockchain.info/ticker", "[data-btc]");
-animaisFetch(
-  "https://vrodrigues06.github.io/Javascript-Origamid/animaisapi.json",
-  ".numeros-grid"
-);
+animaisFetch("./animaisapij.json", ".numeros-grid");
 
 const funcionamento = new Funcionamento("[data-semana]");
 funcionamento.init();
