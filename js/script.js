@@ -9,6 +9,7 @@ import Funcionamento from "./modules/funcionamento.js";
 import animaisFetch from "./modules/animais-fetch.js";
 import fetchBtc from "./modules/fetch-btc.js";
 import AnimateScroll from "./modules/animate-scroll.js";
+import SlideNav from "./modules/slideNav.js";
 
 const smoothScroll = new SmoothScroll('[data-menu="suave"] a[href^="#"]');
 smoothScroll.init();
@@ -47,3 +48,7 @@ animaisFetch("./animaisapi.json", ".numeros-grid");
 
 const funcionamento = new Funcionamento("[data-semana]");
 funcionamento.init();
+
+const slide = new SlideNav(".container", ".slide");
+slide.init();
+slide.addControl(".custom-controls");
