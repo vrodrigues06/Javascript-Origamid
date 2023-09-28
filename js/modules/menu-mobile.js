@@ -15,7 +15,8 @@ export default class MenuMobile {
   }
 
   // abre e fecha os menus de acordo com a ativação dos eventos determinados
-  openMenu() {
+  openMenu(event) {
+    event.preventDefault();
     const menus = [this.menuLista, this.menuButton];
     menus.forEach((menu) => {
       menu.classList.add("active");

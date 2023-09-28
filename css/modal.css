@@ -17,13 +17,15 @@
 
 .modal {
   background: #3c3c3c;
-  min-width: 300px;
+  width: 80vw;
+  max-width: 500px;
   padding: 40px;
   border: 10px solid #fb5;
   box-shadow: 0 0 0 10px;
   border-radius: 4px;
   color: white;
   position: relative;
+  box-sizing: border-box;
 }
 
 @keyframes modal {
@@ -44,7 +46,7 @@
 
 .close {
   position: absolute;
-  background: #fb5;
+  background: #fb5 url('../img/fechar.svg') no-repeat center center;
   height: 50px;
   width: 50px;
   top: -30px;
@@ -52,10 +54,6 @@
   border: 3px solid #3c3c3c;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .3);
   border-radius: 50%;
-  color: #fff;
-  font-size: 1.15rem;
-  font-weight: bold;
-  font-family: 'IBM plex mono', monospace;
   cursor: pointer;
 }
 
